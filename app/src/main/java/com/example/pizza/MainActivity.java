@@ -1,4 +1,4 @@
-// MainActivity.java
+
 package com.example.pizza;
 
 import android.content.SharedPreferences;
@@ -52,10 +52,11 @@ public class MainActivity extends AppCompatActivity {
 
         orderButton.setOnClickListener(v -> showOrderSummary());
         clearButton.setOnClickListener(v -> resetForm());
+
         SharedPreferences prefs = getSharedPreferences("pizza_prefs", MODE_PRIVATE);
         nameEditText.setText(prefs.getString("name", ""));
         sizeSeekBar.setProgress(prefs.getInt("size", 2));
-        doughGroup.check(prefs.getInt("dough", -1));
+        doughGroup.check(prefs.getInt("dough", R.id.thin));
         cheeseBox.setChecked(prefs.getBoolean("cheese", false));
         hamBox.setChecked(prefs.getBoolean("ham", false));
         mushroomBox.setChecked(prefs.getBoolean("mushroom", false));
@@ -81,7 +82,7 @@ public class MainActivity extends AppCompatActivity {
         else dough = ((RadioButton) findViewById(doughId)).getText().toString();
 
         StringBuilder ingredients = new StringBuilder();
-        int price = (pizzaSize - 20) * 1;
+        int price = pizzaSize - 10;
 
         if (cheeseBox.isChecked()) { ingredients.append("Ser, "); price += 2; }
         if (hamBox.isChecked()) { ingredients.append("Szynka, "); price += 2; }
@@ -100,7 +101,7 @@ public class MainActivity extends AppCompatActivity {
                 "\nRozmiar: " + pizzaSize + " cm" +
                 "\nCiasto: " + dough +
                 "\nSkładniki: " + ingredients.toString() +
-                "\nDostawa: " + (delivery ? "z dostawą (+5 zł)" : "na wynos") +
+                "\nDostawa: " + (delivery ? "z dostawą (+5 zł)" : "odbiór") +
                 "\n\nCena: " + price + " zł";
 
         new AlertDialog.Builder(this)
@@ -113,7 +114,7 @@ public class MainActivity extends AppCompatActivity {
     private void resetForm() {
         nameEditText.setText("");
         sizeSeekBar.setProgress(2);
-        doughGroup.clearCheck();
+        doughGroup.check(R.id.thin);
         cheeseBox.setChecked(false);
         hamBox.setChecked(false);
         mushroomBox.setChecked(false);

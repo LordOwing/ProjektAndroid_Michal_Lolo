@@ -64,6 +64,7 @@
                 android:id="@+id/thin"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:checked="true"
                 android:text="Cienkie"/>
             <RadioButton
                 android:id="@+id/thick"
@@ -78,7 +79,7 @@
         </RadioGroup>
 
         <TextView
-            android:text="Dodatkowe składniki"
+            android:text="Dodatkowe składniki (2 zł za dodatek)"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"/>
