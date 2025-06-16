@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    android:background="#FFFDE7">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:text="Kreator Pizzy"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            />
+
+        <EditText
+            android:id="@+id/nameEditText"
+            android:hint="Wpisz swoje imię"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:src="@drawable/pizza"
+            android:scaleType="centerCrop"
+            android:layout_marginVertical="12dp" />
+
+        <TextView
+            android:text="Rozmiar pizzy"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <SeekBar
+            android:id="@+id/sizeSeekBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:max="6"
+            android:progress="2"
+            />
+        <TextView
+            android:id="@+id/sizeText"
+            android:text="Rozmiar pizzy: 30 cm"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="italic"/>
+
+        <TextView
+            android:text="Rodzaj ciasta"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"/>
+
+        <RadioGroup
+            android:id="@+id/doughGroup"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <RadioButton
+                android:id="@+id/thin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Cienkie"/>
+            <RadioButton
+                android:id="@+id/thick"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Grube"/>
+            <RadioButton
+                android:id="@+id/cheesy"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Serowe (+5 zł)"/>
+        </RadioGroup>
+
+        <TextView
+            android:text="Dodatkowe składniki"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"/>
+        <CheckBox
+            android:id="@+id/cheeseBox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Ser"/>
+        <CheckBox
+            android:id="@+id/hamBox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Szynka"/>
+        <CheckBox
+            android:id="@+id/mushroomBox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Pieczarki"/>
+        <CheckBox
+            android:id="@+id/pineappleBox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Ananas"/>
+
+        <TextView
+            android:text="Dostawa"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"/>
+        <Switch
+            android:id="@+id/deliverySwitch"
+            android:text="Z dostawą (+5 zł)"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <Button
+            android:id="@+id/orderButton"
+            android:text="Zamów pizzę"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:backgroundTint="#E53935"
+            android:textColor="#FFFFFF"/>
+
+        <Button
+            android:id="@+id/clearButton"
+            android:text="Wyczyść wybór"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:backgroundTint="#BDBDBD"/>
+
+    </LinearLayout>
+</ScrollView>
